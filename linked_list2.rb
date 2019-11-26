@@ -10,7 +10,9 @@ class LinkedListNode
 end
 
 def reverse_list(list, previous=nil) #passing in 2 arguments, the linked list and the previous node
-  if list_node                       #this if statment allows us to see if a linked list or not exist and it also lets us know when we have reached the end of the linked list
+  if !list #this if statment allows us to see if a linked list or not exist and it also lets us know when we have reached the end of the linked list
+    previous
+  else
     next_node = list.next_node       #this becomes the list for the recursion
     list.next_node = previous        #this will start as nil
     reverse_list(next_node, list)    #here, the reverse_list is calling itself and passing in the 2 arguments 

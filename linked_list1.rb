@@ -19,11 +19,13 @@ class Stack
   end
 #pop an item off the stack. remove the last item that was pushed onto the stack and return the value to the user
   def pop
-    return print "nil\n" if @data.nil?
+    if @data.nil?
+    print "nil\n" 
+      return 
+    end
     print "#{@data.value}\n"
     @data = @data.next_node
   end
-
 end
 
 def reverse_list(list)
